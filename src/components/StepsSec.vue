@@ -130,13 +130,6 @@ const counter = useTemplateRef('counter')
 const infoContent = useTemplateRef('info-content')
 
 onMounted(() => {
-  const swiperScrollbar = document.querySelector('.swiper-scrollbar')
-  const swiperScrollbarDrag = swiperScrollbar.querySelector(
-    '.swiper-scrollbar-drag',
-  )
-  const swiperSlides = document.querySelectorAll('.swiper-slide')
-  const swiperSlidesLength = swiperSlides.length
-
   const heightProgress = gsap.to(counter.value, {
     '--counter-border-height': '100%',
   })
@@ -191,14 +184,6 @@ onMounted(() => {
       },
     })
   })
-
-  if (swiperScrollbar) {
-    swiperScrollbar.style.width = '201px'
-    swiperScrollbar.style.left = '50%'
-    swiperScrollbar.style.transform = 'translateX(-50%)'
-
-    swiperScrollbarDrag.style.width = `100% / ${swiperSlidesLength}`
-  }
 })
 </script>
 
@@ -398,6 +383,16 @@ onMounted(() => {
     &__slider {
       display: block;
     }
+  }
+}
+</style>
+
+<style>
+@media screen and (max-width: 1023px) {
+  .swiper-scrollbar {
+    width: 54% !important;
+    left: 50% !important;
+    transform: translateX(-50%);
   }
 }
 </style>

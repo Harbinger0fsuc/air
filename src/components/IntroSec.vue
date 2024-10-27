@@ -23,6 +23,7 @@
                 pathTo="#!"
                 text="what is this ?"
                 btnType="link"
+                :icon="true"
               />
             </div>
           </div>
